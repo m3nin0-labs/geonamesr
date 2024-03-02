@@ -6,7 +6,7 @@ Date: 2024-02-09
 Author: Felipe Carlos
 Maintainer: efelipecarlos@gmail.com
 Description: Utility package to index and search Geonames data in R
-License: GPL (>= 2)
+License: MIT + file LICENSE
 Imports: 
     fs,
     pkgload,
