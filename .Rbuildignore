@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+.geonamesr
+Dockerfile
+docker-compose.yml
+^README\.Rmd$

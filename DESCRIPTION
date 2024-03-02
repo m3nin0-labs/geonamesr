@@ -1,0 +1,19 @@
+Package: geonamesr
+Type: Package
+Title: Geonames in R
+Version: 1.0
+Date: 2024-02-09
+Author: Felipe Carlos
+Maintainer: efelipecarlos@gmail.com
+Description: Utility package to index and search Geonames data in R
+License: GPL (>= 2)
+Imports: 
+    fs,
+    pkgload,
+    plumber,
+    Rcpp (>= 1.0.12),
+    readr,
+    stringr
+LinkingTo: Rcpp
+RoxygenNote: 7.3.1
+Encoding: UTF-8

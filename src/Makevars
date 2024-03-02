@@ -1,0 +1,5 @@
+# Path to Lucene++ headers
+PKG_CPPFLAGS=-I/usr/local/include/lucene++
+
+# Path to Lucene++ library files
+PKG_LIBS=-L/usr/local/lib/ -llucene++ -llucene++-contrib

@@ -1,0 +1,9 @@
+useDynLib(geonamesr, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
+
+export(index)
+export(search)
+
+import(pkgload)
+import(plumber)
