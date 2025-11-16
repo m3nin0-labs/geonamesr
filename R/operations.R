@@ -25,7 +25,7 @@
 #'       https://download.geonames.org/export/dump/
 #'
 #' @export
-index <- function(geonames_file) {
+index <- function(geonames_file, chunk_size = 15000) {
   if (!.fs_check_file(geonames_file)) {
     .error("Invalid Geonames data file.")
   }
@@ -34,27 +34,45 @@ index <- function(geonames_file) {
   .fs_create_dir(.get_geonamesr_data_dir())
   
   # Indexing all content by chunks
-  .geonames_read_by_chunks(geonames_file, function(row, idx) {
-    names(row) <- .get_geonamesr_columns()
-    
-    geonames <-
-      lapply(split(row, seq(nrow(row))), function(rowMutate) {
-        rowMutate$geometry <-
-          paste(rowMutate["longitude"], rowMutate["latitude"], sep = ",")
-        
-        rowMutate
-      })
-    
-    geonames_index_result <-
-      try(.indexBulk(geonames, .get_geonamesr_index_dir()))
-    
-    list(idx = idx,
-         error = ifelse(
-           geonames_index_result == Inf,
-           FALSE,
-           all(geonames_index_result)
-         ))
-  })
+  index_dir <- .get_geonamesr_index_dir()
+  column_names <- .get_geonamesr_columns()
+  
+  # Process all chunks
+  .geonames_read_by_chunks(
+    geonames_file, 
+    function(row, idx) {
+      # Set column names
+      names(row) <- column_names
+      
+      # Geometry creation
+      row$geometry <- paste(row$longitude, row$latitude, sep = ",")
+      
+      # Convert data frame to list of lists 
+      geonames <- do.call(Map, c(
+        list(function(...) {
+          row_data <- list(...)
+          names(row_data) <- names(row)
+          row_data
+        }),
+        as.list(row)
+      ))
+      
+      # Index the chunk
+      geonames_index_result <- try(.indexBulk(geonames, index_dir), silent = TRUE)
+      
+      list(idx = idx,
+           error = ifelse(
+             inherits(geonames_index_result, "try-error") || 
+               identical(geonames_index_result, Inf),
+             FALSE,
+             all(geonames_index_result)
+           ))
+    },
+    chunk_size = chunk_size
+  )
+  
+  # Optimize the index
+  .indexOptimize(index_dir)
 }
 
 #' Search Geonames data.

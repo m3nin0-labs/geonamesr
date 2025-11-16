@@ -21,6 +21,7 @@ Lucene::IndexWriterPtr IndexWriterFactory(Lucene::String index) {
     Lucene::newLucene<Lucene::StandardAnalyzer>(
       Lucene::LuceneVersion::LUCENE_CURRENT
     ),
+    true,
     Lucene::IndexWriter::MaxFieldLengthLIMITED
   );
   

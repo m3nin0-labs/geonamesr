@@ -14,7 +14,7 @@ Rcpp::NumericVector index(Rcpp::List content, Rcpp::String indexName) {
     writer->addDocument(GeonamesDocument(content));
     
     writer->optimize();
-    writer->clone();
+    writer->commit();
     
   } catch(Lucene::LuceneException& e) {
     return 1;
@@ -41,10 +41,19 @@ Rcpp::LogicalVector indexBulk(Rcpp::ListOf<Rcpp::List> content, Rcpp::String ind
     }
   }
   
-  writer->optimize();
   writer->commit();
   
   return results;
+}
+
+// [[Rcpp::export(".indexOptimize")]]
+Rcpp::NumericVector indexOptimize(Rcpp::String indexName) {
+  Lucene::IndexWriterPtr writer = IndexWriterFactory(indexName);
+  
+  writer->optimize();
+  writer->commit();
+  
+  return 0;
 }
 
 // [[Rcpp::export(".search")]]
