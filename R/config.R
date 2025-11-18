@@ -8,7 +8,7 @@
 #' Get GeonamesR data directory.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the GeonamesR data directory.
 #'
@@ -19,7 +19,7 @@
 #' Get GeonamesR index directory.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the GeonamesR index directory.
 #'
@@ -30,7 +30,7 @@
 #' Get raw Geonames columns.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the GeonamesR index directory.
 #'

@@ -8,7 +8,7 @@
 #' Read geonames file by chunks.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @param geonames_file Path to the Geonames raw CSV
 #' @param callback Callback function used to process the data chunks. This

@@ -8,7 +8,7 @@
 #' Create directory.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the created directory.
 .fs_create_dir <- function(directory) {
@@ -22,7 +22,7 @@
 #' Check if a given file exists.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Boolean indicating if the given file exists or not.
 .fs_check_file <- function(file) {
@@ -32,7 +32,7 @@
 #' Check if a given file exists.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Boolean indicating if the given dir exists or not.
 .fs_check_dir <- function(dir) {

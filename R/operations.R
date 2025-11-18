@@ -7,7 +7,7 @@
 
 #' Index Geonames data.
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @param geonames_file Path to the Geonames raw CSV.
 #'
@@ -77,7 +77,7 @@ index <- function(geonames_file, chunk_size = 15000) {
 
 #' Search Geonames data.
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @param text Query text
 #' @param max_items Max number of files to return as result.
