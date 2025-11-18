@@ -5,10 +5,9 @@
 # under the terms of the MIT License; see LICENSE file for more details.
 #
 
-# Build arguments
-ARG R_VERSION=4.5.1
+FROM ubuntu:22.04
 
-FROM r-base:${R_VERSION}
+ENV DEBIAN_FRONTEND noninteractive
 
 # Metadata label
 LABEL maintainer="Felipe Carlos <efelipecarlos@gmail.com>" \
@@ -24,6 +23,7 @@ RUN apt update -y \
     && apt install -y \
         git \
         cmake \
+        r-base \
         r-cran-devtools \
         r-cran-fs \
         r-cran-pkgload \
@@ -38,12 +38,13 @@ RUN apt update -y \
         libboost-regex-dev \
         libboost-thread-dev \
         libboost-iostreams-dev \
+        libcurl4-openssl-dev \
+        libsodium-dev \
     && apt clean \
     && rm -rf /var/lib/apt/lists/*
 
 RUN git clone https://github.com/luceneplusplus/LucenePlusPlus.git \
     && cd LucenePlusPlus \
-    && sed -i -e '/#include/a#include <cstdint>' src/test/gtest/googletest/src/gtest-death-test.cc \
     && mkdir build; cd build \
     && cmake -DCMAKE_INSTALL_PREFIX=/usr/local .. \
     && make \
