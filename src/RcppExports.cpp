@@ -34,6 +34,17 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// indexOptimize
+Rcpp::NumericVector indexOptimize(Rcpp::String indexName);
+RcppExport SEXP _geonamesr_indexOptimize(SEXP indexNameSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Rcpp::String >::type indexName(indexNameSEXP);
+    rcpp_result_gen = Rcpp::wrap(indexOptimize(indexName));
+    return rcpp_result_gen;
+END_RCPP
+}
 // search
 Rcpp::List search(Rcpp::String queryText, int maxItems, Rcpp::String indexName);
 RcppExport SEXP _geonamesr_search(SEXP queryTextSEXP, SEXP maxItemsSEXP, SEXP indexNameSEXP) {
@@ -51,6 +62,7 @@ END_RCPP
 static const R_CallMethodDef CallEntries[] = {
     {"_geonamesr_index", (DL_FUNC) &_geonamesr_index, 2},
     {"_geonamesr_indexBulk", (DL_FUNC) &_geonamesr_indexBulk, 2},
+    {"_geonamesr_indexOptimize", (DL_FUNC) &_geonamesr_indexOptimize, 1},
     {"_geonamesr_search", (DL_FUNC) &_geonamesr_search, 3},
     {NULL, NULL, 0}
 };
