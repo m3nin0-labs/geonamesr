@@ -15,5 +15,5 @@ Imports:
     readr,
     stringr
 LinkingTo: Rcpp
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.3
 Encoding: UTF-8
