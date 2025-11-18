@@ -4,7 +4,7 @@
 \alias{index}
 \title{Index Geonames data.}
 \usage{
-index(geonames_file)
+index(geonames_file, chunk_size = 15000)
 }
 \arguments{
 \item{geonames_file}{Path to the Geonames raw CSV.}
