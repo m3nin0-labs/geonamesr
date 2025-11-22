@@ -1,0 +1,4 @@
+# Data cache for Geonames R
+.geonamesr/
+/data/
+/_data/

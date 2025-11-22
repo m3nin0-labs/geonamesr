@@ -92,5 +92,10 @@ rsconnect/
 
 # Data cache for Geonames R
 .geonamesr/
+/data/
+/_data/
+
+# Mac
+.DS_Store
 
 # End of https://www.toptal.com/developers/gitignore/api/r,c++

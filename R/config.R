@@ -8,31 +8,29 @@
 #' Get GeonamesR data directory.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the GeonamesR data directory.
 #'
 .get_geonamesr_data_dir <- function() {
   fs::path(Sys.getenv("GEONAMESR_DATA_DIR", ".geonamesr"))
-  
 }
 
 #' Get GeonamesR index directory.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the GeonamesR index directory.
 #'
 .get_geonamesr_index_dir <- function() {
   .get_geonamesr_data_dir() / "indexdata"
-  
 }
 
 #' Get raw Geonames columns.
 #' @noRd
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Path to the GeonamesR index directory.
 #'

@@ -10,7 +10,7 @@
 #'
 #' @param text String to be checked.
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Boolean flag indicating if the given string is empty.
 #'
@@ -23,7 +23,7 @@
 #'
 #' @param integer Integer to be checked
 #'
-#' @author Felipe Carlos, \email{efelipecarlos@gmail.com}
+#' @author Felipe Carlos, \email{efelipecarlos@@gmail.com}
 #'
 #' @return Boolean flag indicating if the given size is valid.
 #'

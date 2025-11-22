@@ -12,9 +12,8 @@ only R functions as a standard package but also provides a
 [Plumber](https://www.rplumber.io/) REST API, making data more
 accessible and discoverable for R users.
 
-> **Note**: This is a **hobby project** created to learn
-> more about [Rcpp](https://www.rcpp.org/) and
-> [Plumber](https://www.rplumber.io/).
+> **Note**: This is a **hobby project** created to learn more about
+> [Rcpp](https://www.rcpp.org/) and [Plumber](https://www.rplumber.io/).
 
 ## Installation
 
@@ -58,7 +57,7 @@ library(geonamesr)
 index("allCountries.txt")
 
 # Searching indexed data
-search("asciiname:switzerland", size = 1)
+search("asciiname:switzerland", max_items = 1)
 ```
 
 ## Accessing the REST API

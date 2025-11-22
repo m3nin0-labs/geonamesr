@@ -9,6 +9,10 @@
     .Call(`_geonamesr_indexBulk`, content, indexName)
 }
 
+.indexOptimize <- function(indexName) {
+    .Call(`_geonamesr_indexOptimize`, indexName)
+}
+
 .search <- function(queryText, maxItems, indexName) {
     .Call(`_geonamesr_search`, queryText, maxItems, indexName)
 }
